@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'https://quiz-app-henna-eight-96.vercel.app'],
   credentials: true, // if you're using cookies or auth headers
 }));
 app.use(express.json());
