@@ -39,7 +39,7 @@ const AdminRegister = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/register-admin', {
+      const response = await axios.post('https://quiz-app-he1s.onrender.com/api/auth/register-admin', {
         username: formData.username,
         email: formData.email,
         password: formData.password,

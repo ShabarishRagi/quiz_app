@@ -28,7 +28,7 @@ const QuizResult = () => {
     const fetchResult = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:5001/api/results/${id}`, {
+        const response = await axios.get(`https://quiz-app-he1s.onrender.com/api/results/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setResult(response.data);

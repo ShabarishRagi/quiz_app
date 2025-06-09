@@ -80,10 +80,10 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       const [quizzesRes, usersRes] = await Promise.all([
-        axios.get('http://localhost:5001/api/quizzes', {
+        axios.get('https://quiz-app-he1s.onrender.com/api/quizzes', {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get('http://localhost:5001/api/users', {
+        axios.get('https://quiz-app-he1s.onrender.com/api/users', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ]);
@@ -171,13 +171,13 @@ const AdminDashboard = () => {
       const token = localStorage.getItem('token');
       if (selectedQuiz) {
         await axios.put(
-          `http://localhost:5001/api/quizzes/${selectedQuiz._id}`,
+          `https://quiz-app-he1s.onrender.com/api/quizzes/${selectedQuiz._id}`,
           quizForm,
           { headers: { Authorization: `Bearer ${token}` } }
         );
       } else {
         await axios.post(
-          'http://localhost:5001/api/quizzes',
+          'https://quiz-app-he1s.onrender.com/api/quizzes',
           quizForm,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -193,7 +193,7 @@ const AdminDashboard = () => {
     if (window.confirm('Are you sure you want to delete this quiz?')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5001/api/quizzes/${quizId}`, {
+        await axios.delete(`https://quiz-app-he1s.onrender.com/api/quizzes/${quizId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchData();

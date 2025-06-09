@@ -92,7 +92,7 @@ const QuizAttempt = () => {
     const fetchQuiz = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:5001/api/quizzes/${id}`, {
+        const response = await axios.get(`https://quiz-app-he1s.onrender.com/api/quizzes/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setQuiz(response.data);
@@ -152,7 +152,7 @@ const QuizAttempt = () => {
     setSubmitting(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5001/api/results', {
+      const response = await axios.post('https://quiz-app-he1s.onrender.com/api/results', {
         quizId: id,
         answers: answers.map((answer, index) => ({
           questionId: index,

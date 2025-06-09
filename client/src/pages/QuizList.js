@@ -27,7 +27,7 @@ const QuizList = () => {
   const fetchQuizzes = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5001/api/quizzes', {
+      const response = await axios.get('https://quiz-app-he1s.onrender.com/api/quizzes', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setQuizzes(response.data);

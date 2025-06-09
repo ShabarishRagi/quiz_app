@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5001/api/auth/me', {
+      const response = await axios.get('https://quiz-app-he1s.onrender.com/api/auth/me', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/login', {
+      const response = await axios.post('https://quiz-app-he1s.onrender.com/api/auth/login', {
         email,
         password
       });
@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (username, email, password) => {
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/register', {
+      const response = await axios.post('https://quiz-app-he1s.onrender.com/api/auth/register', {
         username,
         email,
         password
